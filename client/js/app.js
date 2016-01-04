@@ -109,6 +109,10 @@ $(function() {
             })
             .error(function(){
                 delete stocks[key];
+                $(".update.loader").hide();
+                $("#icon").show();
+                $("input").prop('disabled', false);
+                $('.center button').prop('disabled', false);
             });
         });
         $('input').val('');
