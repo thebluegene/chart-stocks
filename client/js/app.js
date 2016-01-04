@@ -34,6 +34,13 @@ $(function() {
             console.log('POST SUCCESS ', res);
         });
         
+        /*$(".update.loader").hide();
+        $("#icon").show();
+        $("input").prop('disabled', false);
+        $('.center button').prop('disabled', false);*/
+    });
+
+    socket.on('thisUser', function(){
         $(".update.loader").hide();
         $("#icon").show();
         $("input").prop('disabled', false);
@@ -112,6 +119,7 @@ $(function() {
                     data.dataset.data[j][0] = Date.parse(data.dataset.data[j][0]);
                 }
                 socket.emit('add', data);
+                socket.emit('thisUser');
             })
             .error(function() {
                 alert('The stock you input was not found.');
