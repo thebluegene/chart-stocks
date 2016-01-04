@@ -3,7 +3,7 @@ $(function() {
         seriesCounter = 0,
         stocks = {},
         key = 0;
-    var socket = io.connect('https://chart-stock-market-thebluegene.c9users.io/');
+    var socket = io.connect('https://chart-stocks-2187.herokuapp.com/');
 
     socket.on('add', function(data) {
         var stockPresent = false;
