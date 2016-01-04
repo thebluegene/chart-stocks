@@ -106,6 +106,9 @@ $(function() {
                     data.dataset.data[j][0] = Date.parse(data.dataset.data[j][0]);
                 }
                 socket.emit('add', data);
+            })
+            .error(function(){
+                delete stocks[key];
             });
         });
         $('input').val('');
